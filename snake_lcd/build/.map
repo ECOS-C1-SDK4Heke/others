@@ -1,0 +1,393 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x30000000         0x01000000         xr
+RAM              0x04000000         0x00800000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000    0x1acb8
+                0x30000000                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x30000000      0x178 /tmp/ccqghu1c.o
+                0x300000e0                flashio_worker_begin
+                0x30000178                flashio_worker_end
+ .text          0x30000178      0x900 /tmp/ccylUYc2.o
+                0x30000178                uart_getc_nowait
+                0x30000194                uart_getc_wait
+                0x300001b0                rand16
+                0x300001e0                lcd_draw_rect
+                0x30000214                lcd_draw_cell
+                0x30000248                game_init
+                0x3000033c                input_proc
+                0x30000450                snake_move
+                0x300005bc                food_gen
+                0x300006a4                draw_all
+                0x300007ac                show_menu
+                0x30000874                show_start
+                0x300008ec                show_over
+                0x30000a10                game_run
+ .text          0x30000a78      0x29c /tmp/ccoBngII.o
+                0x30000b64                i2c_init
+                0x30000b84                i2c_write_nbyte
+                0x30000c0c                i2c_read_nbyte
+ .text          0x30000d14      0x394 /tmp/ccrfCxmE.o
+                0x30000e84                vprintf
+                0x3000106c                printf
+ .text          0x300010a8       0x60 /tmp/ccUS4F6d.o
+                0x300010a8                memcpy
+                0x300010cc                memset
+                0x300010e8                strlen
+ .text          0x30001108      0x10c /tmp/ccHZCA2p.o
+                0x30001108                gpio_config
+                0x300011c4                gpio_set_level
+                0x300011fc                gpio_get_level
+                0x30001210                gpio_set_function
+ .text          0x30001214       0x48 /tmp/ccMFwRdP.o
+                0x30001214                __lshrdi3
+ .text          0x3000125c       0x28 /tmp/ccNE3O6P.o
+                0x3000125c                __mulsi3
+ .text          0x30001284       0x3c /tmp/ccytsYHf.o
+                0x30001284                sys_uart_init
+                0x30001294                sys_putchar
+                0x300012a0                sys_putstr
+ .text          0x300012c0       0x84 /tmp/ccainllR.o
+                0x300012c0                delay_us
+                0x300012f8                delay_ms
+                0x30001304                delay_s
+                0x30001310                sys_tick_init
+                0x30001334                get_sys_tick
+ .text          0x30001344      0x370 /tmp/ccb4xeX0.o
+                0x30001344                qspi_init
+                0x300013d8                qspi_write_8
+                0x3000141c                qspi_write_16
+                0x30001454                qspi_write_32
+                0x30001488                qspi_write_32x2
+                0x300014c0                qspi_write_32x8
+                0x30001510                qspi_write_32x16
+                0x300015a0                qspi_write_32x32
+ .text          0x300016b4      0x104 /tmp/ccYQKQZU.o
+                0x300016b4                hp_uart_init
+                0x300016f4                hp_uart_send
+                0x30001714                hp_uart_send_str
+                0x30001748                hp_uart_recv
+                0x30001778                hp_uart_recv_str
+ .text          0x300017b8       0x74 /tmp/ccjt0yzB.o
+                0x300017b8                pwm_init
+                0x300017e0                pwm_set_compare
+ .text          0x3000182c      0xc1c /tmp/ccan4wzP.o
+                0x3000182c                st7735_wr_data8
+                0x3000185c                st7735_wr_data16
+                0x3000188c                st7735_wr_data32
+                0x300018bc                st7735_wr_data32x2
+                0x300018fc                st7735_wr_data32x8
+                0x30001970                st7735_wr_data32x16
+                0x30001a64                st7735_wr_data32x32
+                0x30001c48                st7735_wr_cmd
+                0x30001c78                st7735_addr_set
+                0x30001d44                st7735_fill
+                0x30001e78                st7735_init
+                0x300022f4                st7735_fill_img
+ .text          0x30002448      0x4d4 /tmp/ccJiFmTO.o
+                0x300024c8                sgp30_read_serial_id
+                0x30002598                sgp30_read_feature_set
+                0x30002618                sgp30_init_air_quality
+                0x3000264c                sgp30_measure_air_quality
+                0x30002704                sgp30_get_baseline
+                0x300027bc                sgp30_set_baseline
+                0x30002844                sgp30_set_humidity
+                0x30002894                sgp30_measure_test
+ *(.text*)
+ .text.startup  0x3000291c       0xe4 /tmp/ccylUYc2.o
+                0x3000291c                main
+ *(.rodata)
+ .rodata        0x30002a00    0x1804c /tmp/ccylUYc2.o
+                0x30002a00                snake_colors
+                0x30002a40                food_colors
+                0x30002a4c                over
+                0x3000aa4c                menu
+                0x30012a4c                LOGO
+ .rodata        0x3001aa4c       0x58 /tmp/ccrfCxmE.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x3001aaa4      0x213 /tmp/ccylUYc2.o
+                                 0xe9 (size before relaxing)
+ .rodata.str1.4
+                0x3001acb7       0x4b /tmp/ccoBngII.o
+ .rodata.str1.4
+                0x3001acb7       0x2f /tmp/ccrfCxmE.o
+ .rodata.str1.4
+                0x3001acb7       0x49 /tmp/ccb4xeX0.o
+ .rodata.str1.4
+                0x3001acb7       0x5f /tmp/ccan4wzP.o
+ *(.srodata)
+ *(.srodata*)
+                0x3001ad18                        . = ALIGN (0x4)
+ *fill*         0x3001acb7        0x1 
+                0x3001acb8                        _etext = .
+                0x3001acb8                        _sidata = _etext
+
+.rela.dyn       0x3001acb8        0x0
+ .rela.text     0x3001acb8        0x0 /tmp/ccqghu1c.o
+
+.data           0x04000000        0x4 load address 0x3001acb8
+                0x04000000                        . = ALIGN (0x4)
+                0x04000000                        _sdata = .
+                0x04000000                        _ram_start = .
+                0x04000000                        . = ALIGN (0x4)
+ *(.data)
+ .data          0x04000000        0x0 /tmp/ccqghu1c.o
+ .data          0x04000000        0x0 /tmp/ccylUYc2.o
+ .data          0x04000000        0x0 /tmp/ccoBngII.o
+ .data          0x04000000        0x0 /tmp/ccrfCxmE.o
+ .data          0x04000000        0x0 /tmp/ccUS4F6d.o
+ .data          0x04000000        0x0 /tmp/ccHZCA2p.o
+ .data          0x04000000        0x0 /tmp/ccMFwRdP.o
+ .data          0x04000000        0x0 /tmp/ccNE3O6P.o
+ .data          0x04000000        0x0 /tmp/ccytsYHf.o
+ .data          0x04000000        0x0 /tmp/ccainllR.o
+ .data          0x04000000        0x0 /tmp/ccb4xeX0.o
+ .data          0x04000000        0x0 /tmp/ccYQKQZU.o
+ .data          0x04000000        0x0 /tmp/ccjt0yzB.o
+ .data          0x04000000        0x0 /tmp/ccan4wzP.o
+ .data          0x04000000        0x0 /tmp/ccJiFmTO.o
+ *(.data*)
+ *(.sdata)
+ .sdata         0x04000000        0x2 /tmp/ccylUYc2.o
+                0x04000000                rand_seed
+ *(.sdata*)
+                0x04000004                        . = ALIGN (0x4)
+ *fill*         0x04000002        0x2 
+                0x04000004                        _edata = .
+
+.bss            0x04000004      0x23c load address 0x3001acbc
+                0x04000004                        . = ALIGN (0x4)
+                0x04000004                        _sbss = .
+ *(.bss)
+ .bss           0x04000004        0x0 /tmp/ccqghu1c.o
+ .bss           0x04000004      0x228 /tmp/ccylUYc2.o
+                0x04000004                lcd
+                0x04000018                snake
+ .bss           0x0400022c        0x0 /tmp/ccoBngII.o
+ .bss           0x0400022c        0x0 /tmp/ccrfCxmE.o
+ .bss           0x0400022c        0x0 /tmp/ccUS4F6d.o
+ .bss           0x0400022c        0x0 /tmp/ccHZCA2p.o
+ .bss           0x0400022c        0x0 /tmp/ccMFwRdP.o
+ .bss           0x0400022c        0x0 /tmp/ccNE3O6P.o
+ .bss           0x0400022c        0x0 /tmp/ccytsYHf.o
+ .bss           0x0400022c        0x0 /tmp/ccainllR.o
+ .bss           0x0400022c        0x0 /tmp/ccb4xeX0.o
+ .bss           0x0400022c        0x0 /tmp/ccYQKQZU.o
+ .bss           0x0400022c        0x0 /tmp/ccjt0yzB.o
+ .bss           0x0400022c        0x0 /tmp/ccan4wzP.o
+ .bss           0x0400022c        0x0 /tmp/ccJiFmTO.o
+ *(.bss*)
+ *(.sbss)
+ .sbss          0x0400022c       0x14 /tmp/ccylUYc2.o
+                0x04000230                game_tick
+                0x04000234                game_state
+                0x04000235                hi_score
+                0x04000236                score
+                0x04000238                food
+ *(.sbss*)
+ *(COMMON)
+                0x04000240                        . = ALIGN (0x4)
+                0x04000240                        _ebss = .
+
+.heap           0x04000240        0x0
+                0x04000240                        . = ALIGN (0x4)
+                0x04000240                        _heap_start = .
+LOAD /tmp/ccqghu1c.o
+LOAD /tmp/ccylUYc2.o
+LOAD /tmp/ccoBngII.o
+LOAD /tmp/ccrfCxmE.o
+LOAD /tmp/ccUS4F6d.o
+LOAD /tmp/ccHZCA2p.o
+LOAD /tmp/ccMFwRdP.o
+LOAD /tmp/ccNE3O6P.o
+LOAD /tmp/ccytsYHf.o
+LOAD /tmp/ccainllR.o
+LOAD /tmp/ccb4xeX0.o
+LOAD /tmp/ccYQKQZU.o
+LOAD /tmp/ccjt0yzB.o
+LOAD /tmp/ccan4wzP.o
+LOAD /tmp/ccJiFmTO.o
+OUTPUT(build/retrosoc_fw elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2a
+ .riscv.attributes
+                0x00000000       0x28 /tmp/ccqghu1c.o
+ .riscv.attributes
+                0x00000028       0x2a /tmp/ccylUYc2.o
+ .riscv.attributes
+                0x00000052       0x2a /tmp/ccoBngII.o
+ .riscv.attributes
+                0x0000007c       0x2a /tmp/ccrfCxmE.o
+ .riscv.attributes
+                0x000000a6       0x2a /tmp/ccUS4F6d.o
+ .riscv.attributes
+                0x000000d0       0x2a /tmp/ccHZCA2p.o
+ .riscv.attributes
+                0x000000fa       0x2a /tmp/ccMFwRdP.o
+ .riscv.attributes
+                0x00000124       0x2a /tmp/ccNE3O6P.o
+ .riscv.attributes
+                0x0000014e       0x2a /tmp/ccytsYHf.o
+ .riscv.attributes
+                0x00000178       0x2a /tmp/ccainllR.o
+ .riscv.attributes
+                0x000001a2       0x2a /tmp/ccb4xeX0.o
+ .riscv.attributes
+                0x000001cc       0x2a /tmp/ccYQKQZU.o
+ .riscv.attributes
+                0x000001f6       0x2a /tmp/ccjt0yzB.o
+ .riscv.attributes
+                0x00000220       0x2a /tmp/ccan4wzP.o
+ .riscv.attributes
+                0x0000024a       0x2a /tmp/ccJiFmTO.o
+
+.comment        0x00000000       0x22
+ .comment       0x00000000       0x22 /tmp/ccylUYc2.o
+                                 0x23 (size before relaxing)
+ .comment       0x00000022       0x23 /tmp/ccoBngII.o
+ .comment       0x00000022       0x23 /tmp/ccrfCxmE.o
+ .comment       0x00000022       0x23 /tmp/ccUS4F6d.o
+ .comment       0x00000022       0x23 /tmp/ccHZCA2p.o
+ .comment       0x00000022       0x23 /tmp/ccMFwRdP.o
+ .comment       0x00000022       0x23 /tmp/ccNE3O6P.o
+ .comment       0x00000022       0x23 /tmp/ccytsYHf.o
+ .comment       0x00000022       0x23 /tmp/ccainllR.o
+ .comment       0x00000022       0x23 /tmp/ccb4xeX0.o
+ .comment       0x00000022       0x23 /tmp/ccYQKQZU.o
+ .comment       0x00000022       0x23 /tmp/ccjt0yzB.o
+ .comment       0x00000022       0x23 /tmp/ccan4wzP.o
+ .comment       0x00000022       0x23 /tmp/ccJiFmTO.o
+
+Cross Reference Table
+
+Symbol                                            File
+LOGO                                              /tmp/ccylUYc2.o
+__lshrdi3                                         /tmp/ccMFwRdP.o
+                                                  /tmp/ccHZCA2p.o
+__mulsi3                                          /tmp/ccNE3O6P.o
+_ebss                                             /tmp/ccqghu1c.o
+_edata                                            /tmp/ccqghu1c.o
+_sbss                                             /tmp/ccqghu1c.o
+_sdata                                            /tmp/ccqghu1c.o
+_sidata                                           /tmp/ccqghu1c.o
+delay_ms                                          /tmp/ccainllR.o
+                                                  /tmp/ccJiFmTO.o
+                                                  /tmp/ccan4wzP.o
+                                                  /tmp/ccylUYc2.o
+delay_s                                           /tmp/ccainllR.o
+delay_us                                          /tmp/ccainllR.o
+draw_all                                          /tmp/ccylUYc2.o
+flashio_worker_begin                              /tmp/ccqghu1c.o
+flashio_worker_end                                /tmp/ccqghu1c.o
+food                                              /tmp/ccylUYc2.o
+food_colors                                       /tmp/ccylUYc2.o
+food_gen                                          /tmp/ccylUYc2.o
+game_init                                         /tmp/ccylUYc2.o
+game_run                                          /tmp/ccylUYc2.o
+game_state                                        /tmp/ccylUYc2.o
+game_tick                                         /tmp/ccylUYc2.o
+get_sys_tick                                      /tmp/ccainllR.o
+gpio_config                                       /tmp/ccHZCA2p.o
+                                                  /tmp/ccan4wzP.o
+gpio_get_level                                    /tmp/ccHZCA2p.o
+gpio_set_function                                 /tmp/ccHZCA2p.o
+gpio_set_level                                    /tmp/ccHZCA2p.o
+                                                  /tmp/ccan4wzP.o
+hi_score                                          /tmp/ccylUYc2.o
+hp_uart_init                                      /tmp/ccYQKQZU.o
+hp_uart_recv                                      /tmp/ccYQKQZU.o
+hp_uart_recv_str                                  /tmp/ccYQKQZU.o
+hp_uart_send                                      /tmp/ccYQKQZU.o
+hp_uart_send_str                                  /tmp/ccYQKQZU.o
+i2c_init                                          /tmp/ccoBngII.o
+i2c_read_nbyte                                    /tmp/ccoBngII.o
+                                                  /tmp/ccJiFmTO.o
+i2c_write_nbyte                                   /tmp/ccoBngII.o
+                                                  /tmp/ccJiFmTO.o
+input_proc                                        /tmp/ccylUYc2.o
+lcd                                               /tmp/ccylUYc2.o
+lcd_draw_cell                                     /tmp/ccylUYc2.o
+lcd_draw_rect                                     /tmp/ccylUYc2.o
+main                                              /tmp/ccylUYc2.o
+                                                  /tmp/ccqghu1c.o
+memcpy                                            /tmp/ccUS4F6d.o
+memset                                            /tmp/ccUS4F6d.o
+menu                                              /tmp/ccylUYc2.o
+over                                              /tmp/ccylUYc2.o
+printf                                            /tmp/ccrfCxmE.o
+                                                  /tmp/ccan4wzP.o
+                                                  /tmp/ccb4xeX0.o
+                                                  /tmp/ccoBngII.o
+                                                  /tmp/ccylUYc2.o
+pwm_init                                          /tmp/ccjt0yzB.o
+pwm_set_compare                                   /tmp/ccjt0yzB.o
+qspi_init                                         /tmp/ccb4xeX0.o
+                                                  /tmp/ccylUYc2.o
+qspi_write_16                                     /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_32                                     /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_32x16                                  /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_32x2                                   /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_32x32                                  /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_32x8                                   /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+qspi_write_8                                      /tmp/ccb4xeX0.o
+                                                  /tmp/ccan4wzP.o
+rand16                                            /tmp/ccylUYc2.o
+rand_seed                                         /tmp/ccylUYc2.o
+score                                             /tmp/ccylUYc2.o
+sgp30_get_baseline                                /tmp/ccJiFmTO.o
+sgp30_init_air_quality                            /tmp/ccJiFmTO.o
+sgp30_measure_air_quality                         /tmp/ccJiFmTO.o
+sgp30_measure_test                                /tmp/ccJiFmTO.o
+sgp30_read_feature_set                            /tmp/ccJiFmTO.o
+sgp30_read_serial_id                              /tmp/ccJiFmTO.o
+sgp30_set_baseline                                /tmp/ccJiFmTO.o
+sgp30_set_humidity                                /tmp/ccJiFmTO.o
+show_menu                                         /tmp/ccylUYc2.o
+show_over                                         /tmp/ccylUYc2.o
+show_start                                        /tmp/ccylUYc2.o
+snake                                             /tmp/ccylUYc2.o
+snake_colors                                      /tmp/ccylUYc2.o
+snake_move                                        /tmp/ccylUYc2.o
+st7735_addr_set                                   /tmp/ccan4wzP.o
+st7735_fill                                       /tmp/ccan4wzP.o
+                                                  /tmp/ccylUYc2.o
+st7735_fill_img                                   /tmp/ccan4wzP.o
+                                                  /tmp/ccylUYc2.o
+st7735_init                                       /tmp/ccan4wzP.o
+                                                  /tmp/ccylUYc2.o
+st7735_wr_cmd                                     /tmp/ccan4wzP.o
+st7735_wr_data16                                  /tmp/ccan4wzP.o
+st7735_wr_data32                                  /tmp/ccan4wzP.o
+st7735_wr_data32x16                               /tmp/ccan4wzP.o
+st7735_wr_data32x2                                /tmp/ccan4wzP.o
+st7735_wr_data32x32                               /tmp/ccan4wzP.o
+st7735_wr_data32x8                                /tmp/ccan4wzP.o
+st7735_wr_data8                                   /tmp/ccan4wzP.o
+strlen                                            /tmp/ccUS4F6d.o
+sys_putchar                                       /tmp/ccytsYHf.o
+                                                  /tmp/ccrfCxmE.o
+sys_putstr                                        /tmp/ccytsYHf.o
+sys_tick_init                                     /tmp/ccainllR.o
+                                                  /tmp/ccylUYc2.o
+sys_uart_init                                     /tmp/ccytsYHf.o
+                                                  /tmp/ccylUYc2.o
+uart_getc_nowait                                  /tmp/ccylUYc2.o
+uart_getc_wait                                    /tmp/ccylUYc2.o
+vprintf                                           /tmp/ccrfCxmE.o

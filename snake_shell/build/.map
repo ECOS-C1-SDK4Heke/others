@@ -1,0 +1,369 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x30000000         0x01000000         xr
+RAM              0x04000000         0x00800000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x30000000     0x2cb8
+                0x30000000                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x30000000      0x178 /tmp/ccAcuHf7.o
+                0x300000e0                flashio_worker_begin
+                0x30000178                flashio_worker_end
+ .text          0x30000178      0x8fc /tmp/cc8IUiwN.o
+                0x30000178                uart_getc_nowait
+                0x30000194                uart_getc_wait
+                0x300001b0                rand16
+                0x300001e0                game_init
+                0x3000023c                input_proc
+                0x30000350                snake_move
+                0x300004c0                food_gen
+                0x300005a0                draw_all
+                0x30000794                show_start
+                0x300008f4                show_over
+                0x30000a0c                game_run
+ .text          0x30000a74      0x29c /tmp/cczTnZND.o
+                0x30000b60                i2c_init
+                0x30000b80                i2c_write_nbyte
+                0x30000c08                i2c_read_nbyte
+ .text          0x30000d10      0x394 /tmp/ccJvyQfU.o
+                0x30000e80                vprintf
+                0x30001068                printf
+ .text          0x300010a4       0x60 /tmp/ccwnPHLd.o
+                0x300010a4                memcpy
+                0x300010c8                memset
+                0x300010e4                strlen
+ .text          0x30001104      0x10c /tmp/cc1z63Kr.o
+                0x30001104                gpio_config
+                0x300011c0                gpio_set_level
+                0x300011f8                gpio_get_level
+                0x3000120c                gpio_set_function
+ .text          0x30001210       0x48 /tmp/ccqq54rE.o
+                0x30001210                __lshrdi3
+ .text          0x30001258       0x28 /tmp/cc4XYiGx.o
+                0x30001258                __mulsi3
+ .text          0x30001280       0x3c /tmp/cc9uwbgl.o
+                0x30001280                sys_uart_init
+                0x30001290                sys_putchar
+                0x3000129c                sys_putstr
+ .text          0x300012bc       0x84 /tmp/ccqszGyd.o
+                0x300012bc                delay_us
+                0x300012f4                delay_ms
+                0x30001300                delay_s
+                0x3000130c                sys_tick_init
+                0x30001330                get_sys_tick
+ .text          0x30001340      0x370 /tmp/cccif0FM.o
+                0x30001340                qspi_init
+                0x300013d4                qspi_write_8
+                0x30001418                qspi_write_16
+                0x30001450                qspi_write_32
+                0x30001484                qspi_write_32x2
+                0x300014bc                qspi_write_32x8
+                0x3000150c                qspi_write_32x16
+                0x3000159c                qspi_write_32x32
+ .text          0x300016b0      0x104 /tmp/ccJIU39v.o
+                0x300016b0                hp_uart_init
+                0x300016f0                hp_uart_send
+                0x30001710                hp_uart_send_str
+                0x30001744                hp_uart_recv
+                0x30001774                hp_uart_recv_str
+ .text          0x300017b4       0x74 /tmp/ccBYSklc.o
+                0x300017b4                pwm_init
+                0x300017dc                pwm_set_compare
+ .text          0x30001828      0xc1c /tmp/ccki5elQ.o
+                0x30001828                st7735_wr_data8
+                0x30001858                st7735_wr_data16
+                0x30001888                st7735_wr_data32
+                0x300018b8                st7735_wr_data32x2
+                0x300018f8                st7735_wr_data32x8
+                0x3000196c                st7735_wr_data32x16
+                0x30001a60                st7735_wr_data32x32
+                0x30001c44                st7735_wr_cmd
+                0x30001c74                st7735_addr_set
+                0x30001d40                st7735_fill
+                0x30001e74                st7735_init
+                0x300022f0                st7735_fill_img
+ .text          0x30002444      0x4d4 /tmp/ccWn6fMD.o
+                0x300024c4                sgp30_read_serial_id
+                0x30002594                sgp30_read_feature_set
+                0x30002614                sgp30_init_air_quality
+                0x30002648                sgp30_measure_air_quality
+                0x30002700                sgp30_get_baseline
+                0x300027b8                sgp30_set_baseline
+                0x30002840                sgp30_set_humidity
+                0x30002890                sgp30_measure_test
+ *(.text*)
+ .text.startup  0x30002918       0x88 /tmp/cc8IUiwN.o
+                0x30002918                main
+ *(.rodata)
+ .rodata        0x300029a0       0x58 /tmp/ccJvyQfU.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x300029f8      0x2bf /tmp/cc8IUiwN.o
+                                0x191 (size before relaxing)
+ .rodata.str1.4
+                0x30002cb7       0x4b /tmp/cczTnZND.o
+ .rodata.str1.4
+                0x30002cb7       0x2f /tmp/ccJvyQfU.o
+ .rodata.str1.4
+                0x30002cb7       0x49 /tmp/cccif0FM.o
+ .rodata.str1.4
+                0x30002cb7       0x5f /tmp/ccki5elQ.o
+ *(.srodata)
+ *(.srodata*)
+                0x30002d18                        . = ALIGN (0x4)
+ *fill*         0x30002cb7        0x1 
+                0x30002cb8                        _etext = .
+                0x30002cb8                        _sidata = _etext
+
+.rela.dyn       0x30002cb8        0x0
+ .rela.text     0x30002cb8        0x0 /tmp/ccAcuHf7.o
+
+.data           0x04000000        0x4 load address 0x30002cb8
+                0x04000000                        . = ALIGN (0x4)
+                0x04000000                        _sdata = .
+                0x04000000                        _ram_start = .
+                0x04000000                        . = ALIGN (0x4)
+ *(.data)
+ .data          0x04000000        0x0 /tmp/ccAcuHf7.o
+ .data          0x04000000        0x0 /tmp/cc8IUiwN.o
+ .data          0x04000000        0x0 /tmp/cczTnZND.o
+ .data          0x04000000        0x0 /tmp/ccJvyQfU.o
+ .data          0x04000000        0x0 /tmp/ccwnPHLd.o
+ .data          0x04000000        0x0 /tmp/cc1z63Kr.o
+ .data          0x04000000        0x0 /tmp/ccqq54rE.o
+ .data          0x04000000        0x0 /tmp/cc4XYiGx.o
+ .data          0x04000000        0x0 /tmp/cc9uwbgl.o
+ .data          0x04000000        0x0 /tmp/ccqszGyd.o
+ .data          0x04000000        0x0 /tmp/cccif0FM.o
+ .data          0x04000000        0x0 /tmp/ccJIU39v.o
+ .data          0x04000000        0x0 /tmp/ccBYSklc.o
+ .data          0x04000000        0x0 /tmp/ccki5elQ.o
+ .data          0x04000000        0x0 /tmp/ccWn6fMD.o
+ *(.data*)
+ *(.sdata)
+ .sdata         0x04000000        0x2 /tmp/cc8IUiwN.o
+                0x04000000                rand_seed
+ *(.sdata*)
+                0x04000004                        . = ALIGN (0x4)
+ *fill*         0x04000002        0x2 
+                0x04000004                        _edata = .
+
+.bss            0x04000004       0x80 load address 0x30002cbc
+                0x04000004                        . = ALIGN (0x4)
+                0x04000004                        _sbss = .
+ *(.bss)
+ .bss           0x04000004        0x0 /tmp/ccAcuHf7.o
+ .bss           0x04000004       0x74 /tmp/cc8IUiwN.o
+                0x04000004                snake
+ .bss           0x04000078        0x0 /tmp/cczTnZND.o
+ .bss           0x04000078        0x0 /tmp/ccJvyQfU.o
+ .bss           0x04000078        0x0 /tmp/ccwnPHLd.o
+ .bss           0x04000078        0x0 /tmp/cc1z63Kr.o
+ .bss           0x04000078        0x0 /tmp/ccqq54rE.o
+ .bss           0x04000078        0x0 /tmp/cc4XYiGx.o
+ .bss           0x04000078        0x0 /tmp/cc9uwbgl.o
+ .bss           0x04000078        0x0 /tmp/ccqszGyd.o
+ .bss           0x04000078        0x0 /tmp/cccif0FM.o
+ .bss           0x04000078        0x0 /tmp/ccJIU39v.o
+ .bss           0x04000078        0x0 /tmp/ccBYSklc.o
+ .bss           0x04000078        0x0 /tmp/ccki5elQ.o
+ .bss           0x04000078        0x0 /tmp/ccWn6fMD.o
+ *(.bss*)
+ *(.sbss)
+ .sbss          0x04000078        0xc /tmp/cc8IUiwN.o
+                0x04000078                game_tick
+                0x0400007c                game_state
+                0x0400007d                hi_score
+                0x0400007e                score
+                0x04000080                food
+ *(.sbss*)
+ *(COMMON)
+                0x04000084                        . = ALIGN (0x4)
+                0x04000084                        _ebss = .
+
+.heap           0x04000084        0x0
+                0x04000084                        . = ALIGN (0x4)
+                0x04000084                        _heap_start = .
+LOAD /tmp/ccAcuHf7.o
+LOAD /tmp/cc8IUiwN.o
+LOAD /tmp/cczTnZND.o
+LOAD /tmp/ccJvyQfU.o
+LOAD /tmp/ccwnPHLd.o
+LOAD /tmp/cc1z63Kr.o
+LOAD /tmp/ccqq54rE.o
+LOAD /tmp/cc4XYiGx.o
+LOAD /tmp/cc9uwbgl.o
+LOAD /tmp/ccqszGyd.o
+LOAD /tmp/cccif0FM.o
+LOAD /tmp/ccJIU39v.o
+LOAD /tmp/ccBYSklc.o
+LOAD /tmp/ccki5elQ.o
+LOAD /tmp/ccWn6fMD.o
+OUTPUT(build/retrosoc_fw elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2a
+ .riscv.attributes
+                0x00000000       0x28 /tmp/ccAcuHf7.o
+ .riscv.attributes
+                0x00000028       0x2a /tmp/cc8IUiwN.o
+ .riscv.attributes
+                0x00000052       0x2a /tmp/cczTnZND.o
+ .riscv.attributes
+                0x0000007c       0x2a /tmp/ccJvyQfU.o
+ .riscv.attributes
+                0x000000a6       0x2a /tmp/ccwnPHLd.o
+ .riscv.attributes
+                0x000000d0       0x2a /tmp/cc1z63Kr.o
+ .riscv.attributes
+                0x000000fa       0x2a /tmp/ccqq54rE.o
+ .riscv.attributes
+                0x00000124       0x2a /tmp/cc4XYiGx.o
+ .riscv.attributes
+                0x0000014e       0x2a /tmp/cc9uwbgl.o
+ .riscv.attributes
+                0x00000178       0x2a /tmp/ccqszGyd.o
+ .riscv.attributes
+                0x000001a2       0x2a /tmp/cccif0FM.o
+ .riscv.attributes
+                0x000001cc       0x2a /tmp/ccJIU39v.o
+ .riscv.attributes
+                0x000001f6       0x2a /tmp/ccBYSklc.o
+ .riscv.attributes
+                0x00000220       0x2a /tmp/ccki5elQ.o
+ .riscv.attributes
+                0x0000024a       0x2a /tmp/ccWn6fMD.o
+
+.comment        0x00000000       0x22
+ .comment       0x00000000       0x22 /tmp/cc8IUiwN.o
+                                 0x23 (size before relaxing)
+ .comment       0x00000022       0x23 /tmp/cczTnZND.o
+ .comment       0x00000022       0x23 /tmp/ccJvyQfU.o
+ .comment       0x00000022       0x23 /tmp/ccwnPHLd.o
+ .comment       0x00000022       0x23 /tmp/cc1z63Kr.o
+ .comment       0x00000022       0x23 /tmp/ccqq54rE.o
+ .comment       0x00000022       0x23 /tmp/cc4XYiGx.o
+ .comment       0x00000022       0x23 /tmp/cc9uwbgl.o
+ .comment       0x00000022       0x23 /tmp/ccqszGyd.o
+ .comment       0x00000022       0x23 /tmp/cccif0FM.o
+ .comment       0x00000022       0x23 /tmp/ccJIU39v.o
+ .comment       0x00000022       0x23 /tmp/ccBYSklc.o
+ .comment       0x00000022       0x23 /tmp/ccki5elQ.o
+ .comment       0x00000022       0x23 /tmp/ccWn6fMD.o
+
+Cross Reference Table
+
+Symbol                                            File
+__lshrdi3                                         /tmp/ccqq54rE.o
+                                                  /tmp/cc1z63Kr.o
+__mulsi3                                          /tmp/cc4XYiGx.o
+_ebss                                             /tmp/ccAcuHf7.o
+_edata                                            /tmp/ccAcuHf7.o
+_sbss                                             /tmp/ccAcuHf7.o
+_sdata                                            /tmp/ccAcuHf7.o
+_sidata                                           /tmp/ccAcuHf7.o
+delay_ms                                          /tmp/ccqszGyd.o
+                                                  /tmp/ccWn6fMD.o
+                                                  /tmp/ccki5elQ.o
+                                                  /tmp/cc8IUiwN.o
+delay_s                                           /tmp/ccqszGyd.o
+delay_us                                          /tmp/ccqszGyd.o
+draw_all                                          /tmp/cc8IUiwN.o
+flashio_worker_begin                              /tmp/ccAcuHf7.o
+flashio_worker_end                                /tmp/ccAcuHf7.o
+food                                              /tmp/cc8IUiwN.o
+food_gen                                          /tmp/cc8IUiwN.o
+game_init                                         /tmp/cc8IUiwN.o
+game_run                                          /tmp/cc8IUiwN.o
+game_state                                        /tmp/cc8IUiwN.o
+game_tick                                         /tmp/cc8IUiwN.o
+get_sys_tick                                      /tmp/ccqszGyd.o
+gpio_config                                       /tmp/cc1z63Kr.o
+                                                  /tmp/ccki5elQ.o
+gpio_get_level                                    /tmp/cc1z63Kr.o
+gpio_set_function                                 /tmp/cc1z63Kr.o
+gpio_set_level                                    /tmp/cc1z63Kr.o
+                                                  /tmp/ccki5elQ.o
+hi_score                                          /tmp/cc8IUiwN.o
+hp_uart_init                                      /tmp/ccJIU39v.o
+hp_uart_recv                                      /tmp/ccJIU39v.o
+hp_uart_recv_str                                  /tmp/ccJIU39v.o
+hp_uart_send                                      /tmp/ccJIU39v.o
+hp_uart_send_str                                  /tmp/ccJIU39v.o
+i2c_init                                          /tmp/cczTnZND.o
+i2c_read_nbyte                                    /tmp/cczTnZND.o
+                                                  /tmp/ccWn6fMD.o
+i2c_write_nbyte                                   /tmp/cczTnZND.o
+                                                  /tmp/ccWn6fMD.o
+input_proc                                        /tmp/cc8IUiwN.o
+main                                              /tmp/cc8IUiwN.o
+                                                  /tmp/ccAcuHf7.o
+memcpy                                            /tmp/ccwnPHLd.o
+memset                                            /tmp/ccwnPHLd.o
+printf                                            /tmp/ccJvyQfU.o
+                                                  /tmp/ccki5elQ.o
+                                                  /tmp/cccif0FM.o
+                                                  /tmp/cczTnZND.o
+                                                  /tmp/cc8IUiwN.o
+pwm_init                                          /tmp/ccBYSklc.o
+pwm_set_compare                                   /tmp/ccBYSklc.o
+qspi_init                                         /tmp/cccif0FM.o
+qspi_write_16                                     /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_32                                     /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_32x16                                  /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_32x2                                   /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_32x32                                  /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_32x8                                   /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+qspi_write_8                                      /tmp/cccif0FM.o
+                                                  /tmp/ccki5elQ.o
+rand16                                            /tmp/cc8IUiwN.o
+rand_seed                                         /tmp/cc8IUiwN.o
+score                                             /tmp/cc8IUiwN.o
+sgp30_get_baseline                                /tmp/ccWn6fMD.o
+sgp30_init_air_quality                            /tmp/ccWn6fMD.o
+sgp30_measure_air_quality                         /tmp/ccWn6fMD.o
+sgp30_measure_test                                /tmp/ccWn6fMD.o
+sgp30_read_feature_set                            /tmp/ccWn6fMD.o
+sgp30_read_serial_id                              /tmp/ccWn6fMD.o
+sgp30_set_baseline                                /tmp/ccWn6fMD.o
+sgp30_set_humidity                                /tmp/ccWn6fMD.o
+show_over                                         /tmp/cc8IUiwN.o
+show_start                                        /tmp/cc8IUiwN.o
+snake                                             /tmp/cc8IUiwN.o
+snake_move                                        /tmp/cc8IUiwN.o
+st7735_addr_set                                   /tmp/ccki5elQ.o
+st7735_fill                                       /tmp/ccki5elQ.o
+st7735_fill_img                                   /tmp/ccki5elQ.o
+st7735_init                                       /tmp/ccki5elQ.o
+st7735_wr_cmd                                     /tmp/ccki5elQ.o
+st7735_wr_data16                                  /tmp/ccki5elQ.o
+st7735_wr_data32                                  /tmp/ccki5elQ.o
+st7735_wr_data32x16                               /tmp/ccki5elQ.o
+st7735_wr_data32x2                                /tmp/ccki5elQ.o
+st7735_wr_data32x32                               /tmp/ccki5elQ.o
+st7735_wr_data32x8                                /tmp/ccki5elQ.o
+st7735_wr_data8                                   /tmp/ccki5elQ.o
+strlen                                            /tmp/ccwnPHLd.o
+sys_putchar                                       /tmp/cc9uwbgl.o
+                                                  /tmp/ccJvyQfU.o
+sys_putstr                                        /tmp/cc9uwbgl.o
+sys_tick_init                                     /tmp/ccqszGyd.o
+sys_uart_init                                     /tmp/cc9uwbgl.o
+                                                  /tmp/cc8IUiwN.o
+uart_getc_nowait                                  /tmp/cc8IUiwN.o
+uart_getc_wait                                    /tmp/cc8IUiwN.o
+vprintf                                           /tmp/ccJvyQfU.o

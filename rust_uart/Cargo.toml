@@ -1,0 +1,11 @@
+[package]
+name = "rust_uart"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+
+[dependencies]
+ecos-ssc1 = { path = "../ecos_ssc1", features = [] }
+
+[build-dependencies]
+cc = "1.2"

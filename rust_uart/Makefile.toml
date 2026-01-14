@@ -1,0 +1,25 @@
+[config]
+default_to_workspace = false
+
+[tasks.fw]
+script = [
+    "if [ \"x${@}\" = \"x--release\" ]; then",
+    "  cargo build --release",
+    "  ./scripts/postbuild.sh --release",
+    "else",
+    "  cargo build",
+    "  ./scripts/postbuild.sh",
+    "fi"
+]
+
+[tasks.cls]
+script = [
+    "cargo clean",
+    "rm -rf build",
+]
+
+[tasks.xx]
+dependencies = ["fw"]
+script = [
+    "cp build/*.bin /mnt/d/ -f",
+]
