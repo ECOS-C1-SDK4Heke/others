@@ -1,0 +1,47 @@
+[package]
+name = "hanzi-demo"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+
+[package.metadata.ecos]
+ecos_project_root = true
+ecos_flash_cmd_to = "/mnt/d"
+
+[features]
+default = ["cmd", "target"]
+
+need-ecos = ["dep:ecos-ebui", "dep:ecos-ssc1"]
+
+cmd = ["cmd-cli", "cmd-snake", "cmd-font"]
+cmd-all = ["cmd-cli", "cmd-snake", "cmd-font", "cmd-text"]
+cmd-cli = []
+cmd-font = []
+cmd-text = []
+cmd-snake = []
+
+target = ["target-st7735"]
+target-st7735 = ["need-ecos"]
+target-ui-sim = ["dep:embedded-graphics-simulator", "dep:rand", "dep:libc"]
+
+[dependencies]
+ecos-ssc1 = { path = "../ecos_ssc1", features = ["hashbrown", "prelude", "rand"], optional = true }
+ecos-ebui = { path = "../ecos_ebui", optional = true }
+micromath = "2.1"
+embedded-graphics-simulator = { version = "0.8", optional = true }
+
+embedded-io = { version = "0.6", features = ["alloc"] }
+embedded-cli = "0.2"
+embedded-ttf = "0.2"
+embedded-graphics = "0.8"
+embedded-hal = "1.0"
+embedded-graphics-core = "0.4"
+embedded-text = "0.7"
+
+rusttype = { version = "0.9", default-features = false }
+rand = { version = "0.9", optional = true }
+libc = { version = "0.2", optional = true }
+
+[build-dependencies]
+cc = "1"
+image = "0.25"
