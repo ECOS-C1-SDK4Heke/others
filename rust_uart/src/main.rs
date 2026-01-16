@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use ecos_ssc1::{Timer, Uart, ecos_main, print, println};
+use ecos_ssc1::{Timer, Uart, ecos_main};
 
 #[ecos_main(tick)]
 fn main() -> ! {

@@ -25,8 +25,8 @@ target-st7735 = ["need-ecos"]
 target-ui-sim = ["dep:embedded-graphics-simulator", "dep:rand", "dep:libc"]
 
 [dependencies]
-ecos-ssc1 = { path = "../ecos_ssc1", features = ["hashbrown", "prelude", "rand"], optional = true }
-ecos-ebui = { path = "../ecos_ebui", optional = true }
+ecos-ssc1 = { version = "0", features = ["hashbrown", "prelude", "rand"], optional = true }
+ecos-ebui = { version = "0", optional = true }
 micromath = "2.1"
 embedded-graphics-simulator = { version = "0.8", optional = true }
 
@@ -44,4 +44,3 @@ libc = { version = "0.2", optional = true }
 
 [build-dependencies]
 cc = "1"
-image = "0.25"
